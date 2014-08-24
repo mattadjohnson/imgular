@@ -1,0 +1,10 @@
+.randomize {
+	text-align: center;
+}
+
+.randomize-input {
+	margin: 10px 0 10px 0;
+	border: 1px solid;
+	border-radius: 10px;
+	text-align: center;
+}

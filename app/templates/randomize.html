@@ -1,0 +1,11 @@
+<div class="container" ng-controller="RandomizeCtrl">
+	<div class="row">
+		<div class="randomize">
+			<h2 class="randomize-header">Enter a number of images you want to see, and click randomize to get teh lulz</h2>
+			<hr />
+			<input class="randomize-input" type="number" ng-model="count" ng-change="onChange(count)"/>
+			<br />
+			<a ng-href="#/images/{{count}}"><button class="btn btn-default" ng-click="onClick(count)" />{{message}}</a>
+		</div>
+	</div>
+</div>
