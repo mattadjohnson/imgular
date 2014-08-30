@@ -1,12 +1,8 @@
 (function() {
 
-	var app = angular.module('ImgularApp', ['ngRoute']);
+	var app = angular.module('ImgularApp', ['ngRoute', 'angular-loading-bar']);
 
 	app.config(function($routeProvider) {
-
-	    // $imgurGlobalProvider.options({
-	    //   apiKey:'446a9f91f4383c2'
-	    // });
 
 		$routeProvider
 			.when('/', {

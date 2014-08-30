@@ -2,30 +2,21 @@
 
 	var app = angular.module('ImgularApp');
 
-	var imgur = function($http, $scope) {
+	var Imgur = function($http) {
 
-		var getRandom = function(count) {
+		$http.defaults.useXDomain = true;
+		$http.defaults.headers.common['Authorization'] = 'Client-ID INSERT_KEY_HERE';
 
-			var success = 0,
-				dataSet = [];
-
-			for(success; success < count; ) {
-				$http.get('https://api.imgur.com/3/gallery/random/random/')
-					.success(function(data) {
-						success++;
-						dataSet.push(data);
-					});
-			}
-			console.warn(dataSet);
-			return dataSet;
-		};
+		var randomLinks = [],
+			links = [];
 
 		return {
-			getRandom: getRandom
+			randomLinks: randomLinks,
+			links: links
 		};
 	
 	};
 
-	app.factory('imgur', imgur);
+	app.factory('Imgur', Imgur);
 
 }());

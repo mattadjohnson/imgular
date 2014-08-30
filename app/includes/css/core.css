@@ -8,3 +8,18 @@
 	border-radius: 10px;
 	text-align: center;
 }
+
+.thumb-container {
+	display: inline-block;
+	width: 19%;
+	height: 180px;
+	padding: 5px;
+	border: 1px solid #000000;
+	margin: 5px;
+}
+
+.thumb-image {
+	height:100%; 
+	width:100%; 
+	margin:0 auto;
+}

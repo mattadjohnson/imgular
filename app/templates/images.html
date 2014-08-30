@@ -1,17 +1,10 @@
-<!-- Page Content -->
 <div class="container" ng-controller="ImageCtrl">
-
-    <div class="row">
-
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb" ng-repeat="">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+    <div class="row" >
+        <div class="thumb-container" ng-repeat="image in links">
+            <a target="_blank" ng-href="{{image}}">
+                <img class="thumb-image" ng-src="{{image}}" alt="">
             </a>
         </div>
-        
     </div>
-
     <hr>
-
 </div>
-<!-- /.container -->
