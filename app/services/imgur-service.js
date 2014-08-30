@@ -5,7 +5,7 @@
 	var Imgur = function($http) {
 
 		$http.defaults.useXDomain = true;
-		$http.defaults.headers.common['Authorization'] = 'Client-ID INSERT_KEY_HERE';
+		$http.defaults.headers.common['Authorization'] = 'Client-ID 446a9f91f4383c2';
 
 		var randomLinks = [],
 			links = [];

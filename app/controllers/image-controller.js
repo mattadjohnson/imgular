@@ -6,7 +6,7 @@
 
 		var i = 0;
 		var https = '';
-		console.warn('image page: ' + Imgur.randomLinks);
+		
 		$scope.links = Imgur.links;
 
 		angular.forEach(Imgur.randomLinks, function(string) {

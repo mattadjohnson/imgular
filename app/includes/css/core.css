@@ -9,6 +9,10 @@
 	text-align: center;
 }
 
+.randomize-submit {
+	text-decoration: none !important;
+}
+
 .thumb-container {
 	display: inline-block;
 	width: 19%;

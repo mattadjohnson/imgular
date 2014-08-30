@@ -5,7 +5,7 @@
 			<hr />
 			<input class="randomize-input" type="number" ng-model="count" ng-change="onChange(count)"/>
 			<br />
-			<a ng-href="#/images/{{count}}"><button class="btn btn-default" ng-click="onClick(count)" />{{message}}</a>
+			<a class="btn btn-default randomize-submit" ng-href="#/images/{{count}}" ng-click="onClick(count)">{{message}}</a>
 		</div>
 	</div>
 </div>
