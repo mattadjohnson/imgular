@@ -7,6 +7,20 @@
 
 		$scope.message = 'Randomize';
 
+		$scope.links = Imgur.links;
+
+		var i = 0,
+			https = '';
+
+		var url = "http://i.imgur.com/",
+			table = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+			table_length = table.length-1,
+			requests = 0,
+			failed = 0,
+			finished = 0,
+			file_types = ["png", "jpg", "jpeg", "gif"],
+			current_type, img;
+
 		$scope.onChange = function(count) {
 			if (count < 0) {
 				count = 0;
@@ -17,15 +31,53 @@
 			$scope.count = count;
 		};
 
-		$scope.onClick = function(count) {
-			var i = 0;
-			Imgur.randomLinks = [];
-			Imgur.links = [];
-			for(i; i < count; i++) {
-				random = (Math.random() + 1).toString(36).slice(-7)
-				Imgur.randomLinks.push(random);
+		var tryRandom = function(count) {
+			var error = false,
+				length = (Math.floor(Math.random() * (6 - 5 + 1)) + 5);
+
+			$http.post('https://cors-anywhere.herokuapp.com/https://api.random.org/json-rpc/1/invoke', {
+				    "jsonrpc": "2.0",
+				    "method": "generateStrings",
+				    "params": {
+				        "apiKey": "e677aa72-f615-4c00-b5bb-8e2f7c2669aa",
+				        "n": count,
+				        "length": 5,
+				        "characters": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+				        "replacement": false
+				    },
+				    "id": 42
+				})
+				.success(function(result) {
+					getImages(result, count);
+				});
+		};
+
+		var getImages = function(result, count) {
+			randomLinks = (result.result.random.data);
+
+			for(var j = 0; j < count; j++) {
+				$http.get('https://api.imgur.com/3/image/' + randomLinks[j])
+					.success(function(result) {
+						https = result.data.link.replace('http://', 'https://');
+						if($scope.links.indexOf(https) == -1 && $scope.links.length <= count) {
+							$scope.links.push(https);
+						}
+					});
+			}
+
+			if($scope.links.length < count) {
+				var diff = count - $scope.links.length;
+
+				tryRandom(diff);
 			}
 		};
+
+		$scope.onClick = function(count) {
+			$scope.links.length = 0;
+			tryRandom(count);
+		};
+
+	
 	};
 
 	app.controller('RandomizeCtrl', ['$http', '$scope', 'Imgur', RandomizeCtrl]);

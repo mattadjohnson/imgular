@@ -1,10 +1,17 @@
-<div class="container" ng-controller="ImageCtrl">
+<div class="container" ng-controller="RandomizeCtrl">
+    <a class="btn btn-default randomize-back" ng-href="#/">Go Back</a>
+    <span class="randomize-try">
+        <input class="randomize-input" type="number" ng-model="count" ng-change="onChange(count)"/>&nbsp&nbsp&nbsp
+            <a class="btn btn-default randomize-try" ng-href="#/images/{{count}}" ng-click="onClick(count)">
+                Try Again
+            </a>
+    </span>
     <div class="row" >
+    <br><br><hr>
         <div class="thumb-container" ng-repeat="image in links">
             <a target="_blank" ng-href="{{image}}">
                 <img class="thumb-image" ng-src="{{image}}" alt="">
             </a>
         </div>
     </div>
-    <hr>
 </div>

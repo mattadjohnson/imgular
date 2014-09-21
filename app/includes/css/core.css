@@ -13,6 +13,14 @@
 	text-decoration: none !important;
 }
 
+.randomize-back {
+	float: left;
+}
+
+.randomize-try {
+	float: right;
+}
+
 .thumb-container {
 	display: inline-block;
 	width: 19%;
@@ -26,4 +34,8 @@
 	height:100%; 
 	width:100%; 
 	margin:0 auto;
+}
+
+.footer {
+	margin: 20px 0 0 0;
 }
