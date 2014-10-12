@@ -5,7 +5,7 @@
 	var Imgur = function($http) {
 
 		$http.defaults.useXDomain = true;
-		$http.defaults.headers.common['Authorization'] = 'Client-ID 446a9f91f4383c2';
+		$http.defaults.headers.common['Authorization'] = 'Client-ID IMGUR_APIKEY_HERE';
 
 		var randomLinks = [],
 			links = [];
@@ -15,7 +15,7 @@
 				    "jsonrpc": "2.0",
 				    "method": "generateStrings",
 				    "params": {
-				        "apiKey": "e677aa72-f615-4c00-b5bb-8e2f7c2669aa",
+				        "apiKey": "RANDOM.ORG_APIKEY_HERE",
 				        "n": count,
 				        "length": (Math.random() * (8 - 5) + 5),
 				        "characters": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",

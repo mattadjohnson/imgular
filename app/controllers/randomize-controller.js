@@ -3,7 +3,7 @@
 	var app = angular.module('ImgularApp');
 
 	var RandomizeCtrl = function($http, $scope, Imgur) {
-		$scope.count = 10;
+		$scope.count = Math.floor(Math.random()*(20-10+1)+10);;
 
 		$scope.message = 'Randomize';
 
@@ -39,7 +39,7 @@
 				    "jsonrpc": "2.0",
 				    "method": "generateStrings",
 				    "params": {
-				        "apiKey": "e677aa72-f615-4c00-b5bb-8e2f7c2669aa",
+				        "apiKey": "RANDOM.ORG_APIKEY_HERE",
 				        "n": count,
 				        "length": 5,
 				        "characters": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
