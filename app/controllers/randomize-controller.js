@@ -39,7 +39,7 @@
 				    "jsonrpc": "2.0",
 				    "method": "generateStrings",
 				    "params": {
-				        "apiKey": "RANDOM.ORG_APIKEY_HERE",
+				        "apiKey": "e677aa72-f615-4c00-b5bb-8e2f7c2669aa",
 				        "n": count,
 				        "length": 5,
 				        "characters": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
