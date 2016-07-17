@@ -14,7 +14,7 @@
 
         <div class="thumb-container" ng-repeat="image in links">
 
-            <a target="_blank" ng-href="{{image}}">
+            <a target="_blank" ng-href="{{image.replace('.gif', '.gifv')}}">
                 <img class="thumb-image" ng-src="{{image}}" alt="">
             </a>
 
