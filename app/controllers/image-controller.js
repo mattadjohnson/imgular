@@ -2,10 +2,10 @@
 
 	var app = angular.module('ImgularApp');
 
-	var ImageCtrl = function($http, $scope, Imgur) {
+	var ImageCtrl = function($http, $scope) {
 
 	};
 
-	app.controller('ImageCtrl', ['$http', '$scope', 'Imgur', ImageCtrl]);
+	app.controller('ImageCtrl', ['$http', '$scope', ImageCtrl]);
 
 }());

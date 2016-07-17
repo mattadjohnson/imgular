@@ -7,11 +7,9 @@
 		$routeProvider
 			.when('/', {
 				templateUrl: 'app/templates/randomize.html',
-				controller: 'RandomizeCtrl'
 			})
-			.when('/images/:count', {
-				templateUrl: 'app/templates/images.html',
-				controller: 'ImageCtrl'
+			.when('/images/:pageNo', {
+				templateUrl: 'app/templates/images.html'
 			})
 			.otherwise({
 				redirectTo: '/'

@@ -1,9 +1,9 @@
-<div class="container" ng-controller="RandomizeCtrl">
+<div class="container">
 
     <a class="btn btn-default randomize-back" ng-href="#/">Go Back</a>
 
     <span class="randomize-try">
-            <a class="btn btn-default randomize-try" ng-href="#/images/{{count}}" ng-click="onClick(count)">
+            <a class="btn btn-default randomize-try" ng-href="#/images/{{pageNo}}" ng-click="getImages(pageNo)">
                 Try Again
             </a>
     </span>

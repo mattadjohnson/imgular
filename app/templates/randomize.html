@@ -1,9 +1,9 @@
-<div class="container" ng-controller="RandomizeCtrl">
+<div class="container">
 	<div class="row">
 		<div class="randomize">
-			<h2 class="randomize-header">Click randomize to get teh lulz</h2>
+			<h2 class="randomize-header">Click randomize to get some images</h2>
 			<hr />
-			<a class="btn btn-default randomize-submit" ng-href="#/images/{{count}}" ng-click="onClick(count)">{{message}}</a>
+			<a class="btn btn-default randomize-submit" ng-href="#/images/{{pageNo}}" ng-click="getImages(pageNo)">{{message}}</a>
 		</div>
 	</div>
 </div>
